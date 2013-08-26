@@ -7,22 +7,42 @@
  * To change this template use File | Settings | File Templates.
  */
 
-class LatestProductEntity {
+class ProductListEntity
+{
 
+    /**
+     * @var
+     */
     var $productId;
+    /**
+     * @var
+     */
     var $productName;
+    /**
+     * @var
+     */
     var $categoryName;
+    /**
+     * @var
+     */
     var $productImage;
+    /**
+     * @var
+     */
     var $fixedOrBid;
+    /**
+     * @var
+     */
+    var $fixedPrice;
 
-
-    function __construct($categoryName, $fixedOrBid, $productId, $productImage, $productName)
+    function __construct( $productId, $productName, $productImage, $categoryName, $fixedPrice, $fixedOrBid)
     {
-        $this->categoryName = $categoryName;
-        $this->fixedOrBid = $fixedOrBid;
-        $this->productId = $productId;
-        $this->productImage = $productImage;
         $this->productName = $productName;
+        $this->productImage = $productImage;
+        $this->productId = $productId;
+        $this->categoryName = $categoryName;
+        $this->fixedPrice = $fixedPrice;
+        $this->fixedOrBid = $fixedOrBid;
     }
 
     /**
@@ -31,8 +51,6 @@ class LatestProductEntity {
     public function setCategoryName($categoryName)
     {
         $this->categoryName = $categoryName;
-
-
     }
 
     /**
@@ -57,6 +75,22 @@ class LatestProductEntity {
     public function getFixedOrBid()
     {
         return $this->fixedOrBid;
+    }
+
+    /**
+     * @param mixed $fixedPrice
+     */
+    public function setFixedPrice($fixedPrice)
+    {
+        $this->fixedPrice = $fixedPrice;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFixedPrice()
+    {
+        return $this->fixedPrice;
     }
 
     /**
@@ -108,5 +142,8 @@ class LatestProductEntity {
     }
 
 
+
+
 }
+
 ?>

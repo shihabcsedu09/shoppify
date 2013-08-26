@@ -13,16 +13,17 @@ class DBConnect
     static function connect()
     {
         require_once __DIR__ . '/Config.php';
-        $connection = mysql_connect(DB_SERVER, DB_USER, DB_PASSWORD) or die(mysql_error());
-        $database = mysql_select_db(DB_DATABASE) or die(mysql_error()) or die(mysql_error());
+        $connection = new mysqli(DB_SERVER,DB_USER,DB_PASSWORD,DB_DATABASE);
+        if ($connection->connect_error) {
+            trigger_error('Database connection failed: '  . $connection->connect_error, E_USER_ERROR);
+        }
         return $connection;
     }
 
 
-    static function close()
+    static function close(mysqli $connection)
     {
-
-        mysql_close();
+        $connection->close();
     }
 
 }
