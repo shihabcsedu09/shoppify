@@ -11,7 +11,7 @@ class GCM
 {
     public static function send_notification($registatoin_ids, $message)
     {
-        include_once './Config.php';
+        include_once './config.php';
 
 
         $url = 'https://android.googleapis.com/gcm/send';
