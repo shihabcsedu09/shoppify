@@ -29,7 +29,7 @@ class CountProducts
         if (!empty($numberOfProducts)) {
             return $numberOfProducts;
         }
-        else echo "hello";
+       
     }
 }
 

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 26, 2013 at 03:11 PM
+-- Generation Time: Aug 30, 2013 at 02:38 PM
 -- Server version: 5.6.11
 -- PHP Version: 5.5.1
 
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `message` (
   `receiver_email` varchar(11) NOT NULL,
   `receiver_name` varchar(11) NOT NULL,
   `message` varchar(11) NOT NULL,
-  `sent_date` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6),
+  `sent_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `read` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
