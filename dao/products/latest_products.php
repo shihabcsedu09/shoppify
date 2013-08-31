@@ -20,7 +20,9 @@
 
            foreach($result as $row)
            {
-               @array_push($latestProducts, new ProductListEntity($row["product_id"],$row["product_name"],Base64Encode::encodeImage($row["product_image"]),$row["category_name"],$row["fixed_or_auction"],$row["fixed_price"]));
+               @array_push($latestProducts, new ProductListEntity($row["product_id"],$row["product_name"],PRODUCT_IMAGES.$row["product_image"],$row["category_name"],$row["fixed_or_auction"],$row["fixed_price"]));
+
+//               @array_push($latestProducts, new ProductListEntity($row["product_id"],$row["product_name"],Base64Encode::encodeImage($row["product_image"]),$row["category_name"],$row["fixed_or_auction"],$row["fixed_price"]));
            }
 
            return $latestProducts;

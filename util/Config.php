@@ -13,5 +13,7 @@ if (!defined('DB_SERVER')) define('DB_SERVER', "localhost");
 if (!defined('GOOGLE_API_KEY')) define("GOOGLE_API_KEY", "AIzaSyD_g5eiu6b30uQ-aubrZ7K3n3hKXCuOb0Y");
 if (!defined('GOOGLE_SENDER_ID')) define("GOOGLE_SENDER_ID", "457026889762");
 if (!defined('IMAGE_DIR')) define("IMAGE_DIR", __DIR__."/../image/");
+if (!defined('PRODUCT_IMAGES')) define("PRODUCT_IMAGES","http://10.0.2.2/shoppify-web/image/");
+
 
 ?>
