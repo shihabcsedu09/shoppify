@@ -15,21 +15,20 @@ class CountProducts
         include_once __DIR__ . "/../../util/db_execute_query.php";
 
 
-
         $connection = DBConnect::connect();
         $sql = "select count(product_id) as number_of_products from productinfo";
-        $result = DBExecuteQuery::executeQuery($sql,$connection);
+        $result = DBExecuteQuery::executeQuery($sql, $connection);
 
 
-        foreach($result as $row)
-        {
-            $numberOfProducts = array("numberOfProducts",$row["number_of_products"]);
+        foreach ($result as $row) {
+            $numberOfProducts = array("numberOfProducts" => $row["number_of_products"]);
+
         }
 
         if (!empty($numberOfProducts)) {
             return $numberOfProducts;
         }
-       
+
     }
 }
 

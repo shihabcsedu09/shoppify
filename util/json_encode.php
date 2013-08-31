@@ -12,6 +12,6 @@ class JSONEncode
         static function jEncode($name,$value)
         {
             header('Content-type: application/json');
-            echo json_encode(array($name=>$value));
+            echo json_encode(array($name=>$value),JSON_PRETTY_PRINT);
         }
 }

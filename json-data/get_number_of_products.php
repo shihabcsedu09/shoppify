@@ -17,7 +17,7 @@ include_once __DIR__ . "/../dao/products/count_products.php";
 if (isset($_GET["getNumberOfProducts"]))
 {
     $countProducts = new CountProducts();
-    JSONEncode::jEncode("latestProducts", $countProducts->getNumberOfProducts());
+    JSONEncode::jEncode("numberOfProducts", $countProducts->getNumberOfProducts());
 }
 
 ?>

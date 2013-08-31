@@ -11,13 +11,14 @@
 include_once __DIR__ . "/../util/json_encode.php";
 include_once __DIR__ . "/../util/base_64_encode.php";
 include_once __DIR__ . "/../util/base_64_decode.php";
-include_once __DIR__ . "/../dao/products/latest_products.php";
+include_once __DIR__ . "/../dao/products/product_details.php";
 
 
-if (isset($_GET["getProductDetails"]))
-{
-$latestProducts = new LatestProducts();
-JSONEncode::jEncode("latestProducts", $latestProducts->getLatestProducts());
+
+if (isset($_GET["getProductDetails"])) {
+    $productId = mysql_real_escape_string($_GET["getProductDetails"]);
+    $productDetails = new ProductDetails();
+    JSONEncode::jEncode("productDetails",$productDetails->getProductDetails($productId));
 }
 
 

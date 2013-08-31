@@ -13,6 +13,7 @@ class ProductDetailsEntity {
     var $productName;
     var $categoryName;
     var $productImage = array();
+    var $productDescription = array();
     var $sellerFullName;
     var $sellerEmail;
     var $sellerImage;
@@ -21,7 +22,6 @@ class ProductDetailsEntity {
     var $sellerReputation;
     var $productLongitude;
     var $productLatitude;
-    var $fixedOrAuction;
     var $biddingStartTime;
     var $biddingEndTime;
     var $biddingEnd;
@@ -32,33 +32,36 @@ class ProductDetailsEntity {
     var $ups;
     var $downs;
     var $sold;
+    var $comments=array();
 
-    function __construct($auctionId, $biddingEnd, $biddingEndTime, $biddingStartTime, $categoryName, $downs, $fixedOrAuction, $fixedOrBid, $fixedPrice, $minimumBiddingPrice, $postTime, $productId, $productImage, $productLatitude, $productLongitude, $productName, $sellerCellNo, $sellerEmail, $sellerFullName, $sellerImage, $sellerReputation, $sold, $ups)
+    function __construct($productId, $productName, $productImage, $productDescription, $categoryName, $sellerFullName, $sellerEmail, $sellerImage, $sellerCellNo, $sellerReputation, $productLongitude, $productLatitude, $fixedOrBid, $biddingStartTime, $biddingEndTime, $biddingEnd, $minimumBiddingPrice, $auctionId, $fixedPrice, $postTime, $ups, $downs, $sold, $comments)
     {
-        $this->auctionId = $auctionId;
-        $this->biddingEnd = $biddingEnd;
-        $this->biddingEndTime = $biddingEndTime;
-        $this->biddingStartTime = $biddingStartTime;
-        $this->categoryName = $categoryName;
-        $this->downs = $downs;
-        $this->fixedOrAuction = $fixedOrAuction;
-        $this->fixedOrBid = $fixedOrBid;
-        $this->fixedPrice = $fixedPrice;
-        $this->minimumBiddingPrice = $minimumBiddingPrice;
-        $this->postTime = $postTime;
         $this->productId = $productId;
-        $this->productImage = $productImage;
-        $this->productLatitude = $productLatitude;
-        $this->productLongitude = $productLongitude;
         $this->productName = $productName;
-        $this->sellerCellNo = $sellerCellNo;
-        $this->sellerEmail = $sellerEmail;
+        $this->productImage = $productImage;
+        $this->productDescription = $productDescription;
+        $this->categoryName = $categoryName;
         $this->sellerFullName = $sellerFullName;
+        $this->sellerEmail = $sellerEmail;
         $this->sellerImage = $sellerImage;
+        $this->sellerCellNo = $sellerCellNo;
         $this->sellerReputation = $sellerReputation;
-        $this->sold = $sold;
+        $this->productLongitude = $productLongitude;
+        $this->productLatitude = $productLatitude;
+        $this->fixedOrBid = $fixedOrBid;
+        $this->biddingStartTime = $biddingStartTime;
+        $this->biddingEndTime = $biddingEndTime;
+        $this->biddingEnd = $biddingEnd;
+        $this->minimumBiddingPrice = $minimumBiddingPrice;
+        $this->auctionId = $auctionId;
+        $this->fixedPrice = $fixedPrice;
+        $this->postTime = $postTime;
         $this->ups = $ups;
+        $this->downs = $downs;
+        $this->sold = $sold;
+        $this->comments = $comments;
     }
+
 
     /**
      * @param mixed $auctionId
@@ -141,6 +144,22 @@ class ProductDetailsEntity {
     }
 
     /**
+     * @param array $comments
+     */
+    public function setComments($comments)
+    {
+        $this->comments = $comments;
+    }
+
+    /**
+     * @return array
+     */
+    public function getComments()
+    {
+        return $this->comments;
+    }
+
+    /**
      * @param mixed $downs
      */
     public function setDowns($downs)
@@ -154,22 +173,6 @@ class ProductDetailsEntity {
     public function getDowns()
     {
         return $this->downs;
-    }
-
-    /**
-     * @param mixed $fixedOrAuction
-     */
-    public function setFixedOrAuction($fixedOrAuction)
-    {
-        $this->fixedOrAuction = $fixedOrAuction;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getFixedOrAuction()
-    {
-        return $this->fixedOrAuction;
     }
 
     /**
@@ -428,4 +431,5 @@ class ProductDetailsEntity {
         return $this->ups;
     }
 
-}
+
+   }
